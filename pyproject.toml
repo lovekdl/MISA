@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "MISA"
+version = "1.0.0"
+description = "MISA: Memory-Efficient LLMs Optimization with Module-wise Importance Sampling"
+readme = "README.md"
+authors = [{ name = "lovekdl", email = "drjrenjia@gmail.com" }]
+license = { text = "Apache License 2.0" }
+requires-python = ">=3.9"
+keywords = ["LLM", "Optimization", "Memory-Efficient", "Fine-tuning", "BCDM", "AI"]
+
+dependencies = [
+    "torch",
+    "wandb",
+    "peft==0.15.2",
+    "fire==0.7.0",
+    "datasets==3.6.0",
+    "transformers==4.48.0",
+    "sentencepiece==0.2.0",
+    "galore_torch==1.0",
+    "loguru==0.7.3",
+]
+
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "License :: OSI Approved :: Apache Software License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+]
+
+[project.urls]
+Homepage = "https://github.com/lovekdl/MISA"
+
+[tool.setuptools.packages.find]
+include = ["misa"]

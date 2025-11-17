@@ -1,0 +1,17 @@
+*.egg-info/
+__pycache__/
+build/
+
+results/
+result/
+eval/
+eval_results/
+wandb/
+checkpoints/
+c4/
+datasets/C4/
+
+nohup.out/
+save/
+
+logs/

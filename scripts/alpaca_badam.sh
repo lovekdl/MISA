@@ -1,0 +1,30 @@
+
+python -u misa/train.py \
+    --model_name_or_path meta-llama/Llama-2-7b-hf \
+    --dataset_path vicgalle/alpaca-gpt4\
+    --task_name alpaca \
+    --do_train True \
+    --do_eval True\
+    --per_device_train_batch_size 2 \
+    --gradient_accumulation_steps 8 \
+    --eval_on_start True \
+    --granularity layer \
+    --optim adamw_hf\
+    --use_bcd True \
+    --bcd_update_order ascending \
+    --bcd_activated_layers 1 \
+    --bcd_interval_steps 50 \
+    --validation_samples 500 \
+    --eval_steps 200 \
+    --seed 42 \
+    --num_train_epochs 3 \
+    --learning_rate 5e-5 \
+    --lr_scheduler_type cosine\
+    --max_seq_length 512 \
+    --logging_steps 1 \
+    --save_total_limit 0 \
+    --eval_strategy steps \
+    --save_strategy no \
+    --overwrite_output_dir \
+    --output_dir result/alpaca/badam/  \
+    --report_to wandb \

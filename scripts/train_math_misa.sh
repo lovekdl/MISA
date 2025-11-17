@@ -1,0 +1,31 @@
+python -m misa.train \
+    --model_name_or_path meta-llama/Llama-2-7b-hf \
+    --dataset_path datasets/Math10k\
+    --task_name math \
+    --do_train True \
+    --do_eval True\
+    --per_device_train_batch_size 2 \
+    --gradient_accumulation_steps 4 \
+    --eval_on_start True \
+    --granularity module \
+    --optim adamw_hf\
+    --use_bcd True \
+    --bcd_update_order misa \
+    --param_ratio_limit 0.03 \
+    --sample_last 2 \
+    --misa_eta 1.0 \
+    --validation_samples 500 \
+    --bcd_interval_steps 50 \
+    --eval_steps 200 \
+    --seed 42 \
+    --num_train_epochs 3 \
+    --learning_rate 5e-5 \
+    --lr_scheduler_type cosine\
+    --max_seq_length 512 \
+    --logging_steps 1 \
+    --save_total_limit 0 \
+    --eval_strategy steps \
+    --save_strategy no \
+    --overwrite_output_dir \
+    --output_dir result/math/misa/  \
+    --report_to wandb \
